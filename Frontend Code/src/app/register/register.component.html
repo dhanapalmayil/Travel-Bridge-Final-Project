@@ -1,0 +1,101 @@
+<div class="registration-container">
+    <div class="logo-side">
+        <img src="assets/logo.png" alt="Bus Logo" class="logo-image" />
+
+    </div>
+    <div class="form-side">
+      <div class="bus-theme">
+        <h2 class="form-title">
+          <i class="fas fa-bus"></i> Travel Bridge Registration
+        </h2>
+        <p class="form-subtitle">Start your journey with us!</p>
+        
+        <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+          <div class="form-group">
+            <label for="userName">Username</label>
+            <input
+              type="text"
+              id="userName"
+              class="form-control"
+              name="userName"
+              [(ngModel)]="user.userName"
+              required
+              maxlength="100"
+              #userName="ngModel"
+            />
+            <div *ngIf="userName.invalid && userName.touched" class="text-danger">
+              Username is required and must be less than 100 characters.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              [(ngModel)]="user.email"
+              required
+              email
+              maxlength="100"
+              #email="ngModel"
+            />
+            <div *ngIf="email.invalid && email.touched" class="text-danger">
+              Please provide a valid email.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              name="passwordHash"
+              [(ngModel)]="user.passwordHash"
+              required
+              #passwordHash="ngModel"
+            />
+            <div *ngIf="passwordHash.invalid && passwordHash.touched" class="text-danger">
+              Password is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              class="form-control"
+              name="phoneNumber"
+              [(ngModel)]="user.phoneNumber"
+              maxlength="15"
+              #phoneNumber="ngModel"
+            />
+          </div>
+  
+          <div class="form-group" [hidden]="true">
+            <label for="userRole">User Role</label>
+            <select id="userRole" class="form-control" name="userRole" [(ngModel)]="user.userRole" required>
+              <option value="Customer">Customer</option>
+              <option value="Provider">Provider</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+  
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+          
+          <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+          </div>
+  
+          <button type="submit" class="btn btn-primary btn-register" [disabled]="registerForm.invalid">
+            Register <i class="fas fa-ticket-alt"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

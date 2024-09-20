@@ -1,0 +1,90 @@
+.schedule-list {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.schedule-card {
+    background-color: #f8f9fa; /* Light background color for card */
+    border: 1px solid #d84e55; /* Border color for bus style */
+    border-radius: 20px; /* Rounded corners */
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    cursor: pointer;
+    position: relative; /* For pseudo-elements */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures contents don’t overflow the rounded corners */
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-card::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Adjust for the bus-like top shape */
+    left: 10px; /* Center the top shape */
+    width: calc(100% - 20px);
+    height: 20px;
+    background-color: #d84e55; /* Top shape color */
+    border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+}
+
+.schedule-header {
+    position: relative;
+    z-index: 1; /* Ensure content is above the pseudo-element */
+}
+
+.schedule-header h3 {
+    color: #d84e55; /* Header color */
+    margin-bottom: 10px;
+}
+
+.schedule-header p {
+    margin: 5px 0;
+}
+
+.booking-details {
+    background-color: #fff; /* White background for booking details */
+    border: 1px solid #ddd; /* Light border for details section */
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.booking-card {
+    background-color: #f1f1f1; /* Light grey for booking cards */
+    border: 1px solid #d84e55; /* Border color matching the bus style */
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.booking-card h5 {
+    color: #d84e55; /* User name color */
+    margin-bottom: 10px;
+}
+
+.booking-card p {
+    margin: 5px 0;
+}
+
+.seat-details {
+    margin-top: 10px;
+}
+
+.seat-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.seat-details li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd; /* Separator line */
+}
+
+.seat-details li:last-child {
+    border-bottom: none; /* Remove separator from last item */
+}

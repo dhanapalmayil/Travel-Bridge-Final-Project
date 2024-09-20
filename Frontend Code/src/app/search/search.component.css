@@ -1,0 +1,160 @@
+/* search.component.css */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  
+  
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow elements to wrap */
+    max-width: 100%; /* Ensure it uses the available width */
+  }
+  
+  .form-group {
+    flex: 1;
+    min-width: 150px;
+    margin: 0;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, select {
+    width: 85%;
+    padding: 12px; /* Slightly increased padding for height */
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 0.875rem; /* Smaller font size */
+  }
+  
+  .separator {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-swaparrow {
+    font-size: 24px; /* Adjust icon size */
+  
+  }
+  
+  .btn-primary {
+    background-color:#d84e55 ;
+    border-color: #f14a52 ;
+    color: white;
+    padding: 15px 30px; /* Larger padding for the button */
+    font-size: 1.25rem; /* Larger font size */
+    border-radius: 25px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .btn-primary:hover {
+    background-color: #d82b33 ; /* Darker blue on hover */
+    border-color: #e63a43 ; /* Darker border color on hover */
+  }
+  
+  .alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center-align cards */
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    overflow: hidden; /* Ensure no content overflows */
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Lift the card up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow for more depth */
+  }
+  
+  
+  .card-header {
+    background-color: #d84e55;
+    color: white;
+    padding: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap to next line if needed */
+    gap: 20px; /* Space between columns */
+  }
+  
+  .card-item {
+    flex: 1 1 150px; /* Grow and shrink but start with a minimum width */
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Add space inside each column */
+    border: 1px solid #ddd; /* Optional: Add border to each column */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+  }
+  
+  .card-label {
+    font-weight: bold;
+  }
+  
+  .card-value {
+    text-align: left;
+    margin-top: 5px; /* Add space between label and value */
+  }
+  /* Add background image to the bg-container */
+.bg-container {
+    background-image: url('https://s3.rdbuz.com/images/webplatform/india/Homepage-header-2000.webp'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: top;
+    background-repeat: no-repeat;
+    padding: 150px; /* Add padding for spacing */
+  
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for depth */
+      width: 100%;
+}
+
+/* Styling for h2 header text */
+h2 {
+    color: white; /* Adjust text color for visibility */
+    text-align: center;
+   /* background-color: rgba(0, 0, 0, 0.6); /* Add a dark overlay behind the text */
+    padding: 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Spacing between header and form */
+}
+
+/* Form container */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for form */
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+}

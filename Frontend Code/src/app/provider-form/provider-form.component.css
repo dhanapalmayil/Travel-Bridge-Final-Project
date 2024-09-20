@@ -1,0 +1,104 @@
+/* Container styling */
+.registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .logo-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-image {
+    max-width: 200px;
+    height: auto;
+  }
+  
+  .form-side {
+    flex: 2;
+    background-color: #d84e55; /* Background matching the bus theme */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    color: white; /* Text color white for contrast */
+  }
+  
+  .bus-theme {
+    text-align: center;
+  }
+  
+  .form-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white; /* White text for the title */
+    margin-bottom: 10px;
+  }
+  
+  .form-subtitle {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+  }
+  
+  /* Form styling */
+  .provider-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Ensures labels are left-aligned */
+  }
+  
+  label {
+    font-weight: 600;
+    color: white; /* White label text */
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    font-size: 16px;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #fff; /* Highlight input with white */
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #800404;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+  }
+  
+  button:hover {
+    background-color: #ff6767;
+    color:white;
+  }
+  

@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="schedule-list">
+    <h2>Transport Schedules</h2>
+    <div class="schedule-card" *ngFor="let schedule of schedules" (click)="toggleBookings(schedule.scheduleID)">
+        <div class="schedule-header">
+            <h3>{{ schedule.transportName }}</h3>
+            <p><strong>Route:</strong> {{ schedule.origin }} to {{ schedule.destination }}</p>
+            <p><strong>Departure:</strong> {{ schedule.departureTime | date:'short' }}</p>
+            <p><strong>Arrival:</strong> {{ schedule.arrivalTime | date:'short' }}</p>
+            <p><strong>Total Booked seats:</strong> {{ schedule.totalSeats }}</p>
+        </div>
+
+        <div *ngIf="selectedScheduleId === schedule.scheduleID" class="booking-details">
+            <h4>Bookings:</h4>
+            <div class="booking-card" *ngFor="let booking of schedule.bookings">
+                <h5>{{ booking.userName }} ({{ booking.email }})</h5>
+                <p><strong>Status:</strong> {{ booking.bookingStatus }}</p>
+                <p><strong>Total Seats:</strong> {{ booking.numberOfSeats }}</p>
+                <p><strong>Total Amount:</strong> {{ booking.totalAmount | currency:'INR':'symbol' }}</p>
+
+                <div class="seat-details">
+                    <h6>Seat Details:</h6>
+                    <ul>
+                        <li *ngFor="let seat of booking.seatDetails">
+                            <strong>Seat Number:</strong> {{ seat.seatNumber }} - 
+                            <strong>Seat Type:</strong> {{ seat.seatType }} - 
+                            <strong>Price:</strong> {{ seat.seatPrice | currency:'INR':'symbol' }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

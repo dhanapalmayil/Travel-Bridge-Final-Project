@@ -1,0 +1,55 @@
+<div class="registration-container">
+  <div class="logo-side">
+    <img src="assets/logo.png" alt="Bus Logo" class="logo-image" />
+  </div>
+
+  <div class="form-side">
+    <div class="bus-theme">
+      <h2 class="form-title">
+        <i class="fas fa-bus"></i> Provider Registration
+      </h2>
+      <p class="form-subtitle">Join us and provide your service!</p>
+
+      <form #providerForm="ngForm" (ngSubmit)="onSubmit(providerForm)" class="provider-form">
+        
+        <div class="form-group">
+          <label for="userID">User ID:</label>
+          <input type="number" id="userID" [(ngModel)]="providerData.userID" name="userID" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="providerName">Provider Name:</label>
+          <input type="text" id="providerName" [(ngModel)]="providerData.providerName" name="providerName" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contactEmail">Contact Email:</label>
+          <input type="email" id="contactEmail" [(ngModel)]="providerData.contactEmail" name="contactEmail" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contactPhone">Contact Phone:</label>
+          <input type="tel" id="contactPhone" [(ngModel)]="providerData.contactPhone" name="contactPhone" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="providerType">Provider Type:</label>
+          <select id="providerType" [(ngModel)]="providerData.providerType" name="providerType" class="form-control" required>
+            <option value="Bus" selected>Bus</option>
+            <option value="Train">Train</option>
+            <option value="Flight">Flight</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="transportName">Transport Name:</label>
+          <input type="text" id="transportName" [(ngModel)]="providerData.transportName" name="transportName" class="form-control" required />
+        </div>
+
+        <button type="submit" [disabled]="providerForm.invalid" class="btn btn-primary btn-register">
+          Register <i class="fas fa-ticket-alt"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

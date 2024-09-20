@@ -1,0 +1,87 @@
+
+    <div class="bg-container">
+        <h2>India's No. 1 Online Bus Ticket Booking Site</h2>
+      
+        <!-- Search Form Container -->
+        <div class="form-container">
+          <form (ngSubmit)="searchSchedules()" #scheduleForm="ngForm" class="form-row">
+            <div class="form-group">
+              <label for="from">From</label>
+              <input type="text" id="from" [(ngModel)]="from" name="from" class="form-control" required>
+            </div>
+    
+            <div class="separator">
+              <i class="icon-swaparrow"></i>
+            </div>
+    
+            <div class="form-group">
+              <label for="to">To</label>
+              <input type="text" id="to" [(ngModel)]="to" name="to" class="form-control" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" [(ngModel)]="date" name="date" class="form-control" required [attr.min]="minDate">
+            </div>
+    
+            <div class="form-group">
+              <label for="mode">Mode of Transport</label>
+              <select id="mode" [(ngModel)]="mode" name="mode" class="form-control" (change)="onModeChange()" required>
+                <option value="bus">Bus</option>
+                <option value="train">Train</option>
+                <option value="flight">Flight</option>
+              </select>
+            </div>
+    
+            <button type="submit" class="btn btn-primary">{{ buttonText }}</button>
+          </form>
+        </div>
+    
+        <!-- Error Message -->
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+    </div>
+   
+  
+    <!-- Display Results -->
+   <!-- Display Results -->
+   <div class="container">
+<div *ngIf="transportSchedules.length > 0" class="card-container">
+    <div class="card" *ngFor="let schedule of transportSchedules" (click)="selectSchedule(schedule)">
+      <div class="card-header">
+        {{ schedule.transportName }}
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <div class="card-item">
+            <div class="card-label">Origin:</div>
+            <div class="card-value">{{ schedule.origin }}</div>
+          </div>
+          <div class="card-item">
+            <div class="card-label">Destination:</div>
+            <div class="card-value">{{ schedule.destination }}</div>
+          </div>
+          <div class="card-item">
+            <div class="card-label">Departure Time:</div>
+            <div class="card-value">{{ schedule.departureTime | date:'short' }}</div>
+          </div>
+          <div class="card-item">
+            <div class="card-label">Arrival Time:</div>
+            <div class="card-value">{{ schedule.arrivalTime | date:'short' }}</div>
+          </div>
+          <div class="card-item">
+            <div class="card-label">Average Price:</div>
+            <div class="card-value">{{ schedule.price | currency :'INR':'symbol' }}</div>
+          </div>
+          <div class="card-item">
+            <div class="card-label">Available Seats:</div>
+            <div class="card-value">{{ schedule.availableSeats }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
