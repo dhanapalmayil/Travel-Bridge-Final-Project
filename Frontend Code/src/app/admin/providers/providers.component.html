@@ -1,0 +1,79 @@
+<app-admin-header></app-admin-header>
+<div class="provider-management">
+    <h2>Provider Management</h2>
+  
+    <!-- Providers Table -->
+    <table class="table table-striped mt-4">
+      <thead>
+        <tr>
+          <th>Provider Name</th>
+          <th>Contact Email</th>
+          <th>Contact Phone</th>
+          <th>Provider Type</th>
+          <th>Transport Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let provider of providers">
+          <td>{{ provider.providerName }}</td>
+          <td>{{ provider.contactEmail }}</td>
+          <td>{{ provider.contactPhone }}</td>
+          <td>{{ provider.providerType }}</td>
+          <td>{{ provider.transportName }}</td>
+          <td>
+            <button (click)="selectProvider(provider)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteProvider(provider.providerID)" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="selectedProvider" class="edit-provider-form">
+      <!-- Provider Form -->
+      <form [formGroup]="providerForm" (ngSubmit)="updateProvider()">
+        <div class="form-group">
+          <label for="providerName">Provider Name:</label>
+          <input id="providerName" formControlName="providerName" class="form-control">
+          <div *ngIf="providerForm.get('providerName')?.invalid && providerForm.get('providerName')?.touched" class="text-danger">
+            Please enter a valid provider name.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="contactEmail">Contact Email:</label>
+          <input id="contactEmail" formControlName="contactEmail" class="form-control">
+          <div *ngIf="providerForm.get('contactEmail')?.invalid && providerForm.get('contactEmail')?.touched" class="text-danger">
+            Please enter a valid email address.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="contactPhone">Contact Phone:</label>
+          <input id="contactPhone" formControlName="contactPhone" class="form-control">
+          <div *ngIf="providerForm.get('contactPhone')?.invalid && providerForm.get('contactPhone')?.touched" class="text-danger">
+            Please enter a valid phone number.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="providerType">Provider Type:</label>
+          <input id="providerType" formControlName="providerType" class="form-control">
+          <div *ngIf="providerForm.get('providerType')?.invalid && providerForm.get('providerType')?.touched" class="text-danger">
+            Please enter the provider type.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="transportName">Transport Name:</label>
+          <input id="transportName" formControlName="transportName" class="form-control">
+          <div *ngIf="providerForm.get('transportName')?.invalid && providerForm.get('transportName')?.touched" class="text-danger">
+            Please enter the transport name.
+          </div>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Update Provider</button>
+      </form>
+    </div>
+  </div>
+  

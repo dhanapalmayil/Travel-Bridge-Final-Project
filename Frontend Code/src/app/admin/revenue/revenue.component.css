@@ -1,0 +1,120 @@
+/* Center and style the revenue report page */
+.revenue-report {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #d84e55;
+    margin-bottom: 30px;
+    padding:20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .form-control:focus {
+    border-color: #d84e55;
+    outline: none;
+  }
+  
+  .btn-generate {
+    background-color: #d84e55;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-generate:hover {
+    background-color: #b33c44;
+  }
+  
+  /* Report details section */
+  .report-details {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .report-details h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .report-details p {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .report-details span {
+    font-weight: bold;
+    color: #d84e55;
+  }
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .form-container {
+      padding: 20px;
+    }
+  
+    .btn-generate {
+      font-size: 1rem;
+      padding: 8px 16px;
+    }
+  
+    .report-details h3 {
+      font-size: 1.6rem;
+    }
+  
+    .report-details p {
+      font-size: 1.3rem;
+    }
+  }
+  

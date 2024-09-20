@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="container">
+    <!-- Booking Details Section -->
+    <div class="booking-details">
+        <h2>Booking Details</h2>
+        <p><strong>Number of Seats:</strong> {{ seatCount }}</p>
+        <p><strong>Total Amount:</strong> ₹{{ totalAmount }}</p>
+    
+        <!-- Display selected seats -->
+        <div class="selected-seats">
+            <h3>Selected Seats</h3>
+            <ul>
+                <li *ngFor="let seat of selectedSeats | keyvalue">
+                    Seat ID: {{ seat.key }}, Seat Number: {{ seat.value }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <!-- Payment Form Section -->
+    <div class="payment-form">
+        <h2>Payment Form</h2>
+        <form (ngSubmit)="handlePayment()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" [(ngModel)]="paymentData.name" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" [value]="totalAmount" readonly>
+            </div>
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card_number" placeholder="Enter card number" [(ngModel)]="paymentData.cardNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="text" id="expiry-date" name="expiry_date" placeholder="MM/YY" [(ngModel)]="paymentData.expiryDate" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" [(ngModel)]="paymentData.cvv" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Pay Now</button>
+            </div>
+        </form>
+    </div>
+</div>

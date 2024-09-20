@@ -1,0 +1,45 @@
+<app-admin-header></app-admin-header>
+
+<div>
+    <h2>Booking Report</h2>
+    <form [formGroup]="reportForm" (ngSubmit)="fetchReport()">
+      <div>
+        <label for="startDate">Start Date:</label>
+        <input id="startDate" formControlName="startDate" type="date" />
+      </div>
+      <div>
+        <label for="endDate">End Date:</label>
+        <input id="endDate" formControlName="endDate" type="date" />
+      </div>
+      <button type="submit">Generate Report</button>
+    </form>
+  
+    <div *ngIf="bookings.length > 0">
+      <h3>Report Details</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>User ID</th>
+            <th>Schedule ID</th>
+            <th>Booking Date</th>
+            <th>Number of Seats</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of bookings">
+            <td>{{ booking.BookingID }}</td>
+            <td>{{ booking.UserID }}</td>
+            <td>{{ booking.ScheduleID }}</td>
+            <td>{{ booking.BookingDate | date:'short' }}</td>
+            <td>{{ booking.NumberOfSeats }}</td>
+            <td>{{ booking.TotalAmount | currency:'INR' }}</td>
+            <td>{{ booking.BookingStatus }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

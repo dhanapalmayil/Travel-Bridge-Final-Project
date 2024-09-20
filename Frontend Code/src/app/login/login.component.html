@@ -1,0 +1,61 @@
+<div class="login-container">
+    <div class="form-side">
+        <div class="bus-theme">
+            <h2 class="form-title">
+                <i class="far fa-smile"></i> Travel Bridge Login
+            </h2>
+            <p class="form-subtitle">Welcome back!</p>
+    
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        name="email"
+                        [(ngModel)]="login.email"
+                        required
+                        email
+                        maxlength="100"
+                        #email="ngModel"
+                    />
+                    <div *ngIf="email.invalid && email.touched" class="text-danger">
+                        Please provide a valid email.
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        name="password"
+                        [(ngModel)]="login.password"
+                        required
+                        #password="ngModel"
+                    />
+                    <div *ngIf="password.invalid && password.touched" class="text-danger">
+                        Password is required.
+                    </div>
+                </div>
+    
+                <div *ngIf="errorMessage" class="alert alert-danger">
+                    {{ errorMessage }}
+                </div>
+    
+                <div *ngIf="successMessage" class="alert alert-success">
+                    {{ successMessage }}
+                </div>
+    
+                <button type="submit" class="btn btn-primary btn-login" [disabled]="loginForm.invalid">
+                    Login <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="logo-side">
+        <img src="assets/logo.png" alt="Bus Logo" class="logo-image" />
+    </div>
+</div>

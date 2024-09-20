@@ -1,0 +1,91 @@
+/* Center the dashboard and add a clean design */
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #d84e55;
+    margin-bottom: 20px;
+    padding:20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  .metrics-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  
+  .metrics-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .metric-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .metric-item span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .metric-item span:first-child {
+    color: #777;
+    font-weight: 400;
+  }
+  
+  .metric-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .metrics-container {
+      padding: 20px;
+    }
+  
+    .metric-item {
+      padding: 10px 15px;
+    }
+  
+    .metric-item span {
+      font-size: 1.25rem;
+    }
+  }
+  

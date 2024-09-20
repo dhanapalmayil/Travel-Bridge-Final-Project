@@ -1,0 +1,61 @@
+<app-header></app-header>
+<form (ngSubmit)="onSubmit()">
+  <div>
+      <label for="origin">Origin</label>
+      <input id="origin" name="origin" [(ngModel)]="schedule.origin" type="text">
+  </div>
+
+  <div>
+      <label for="destination">Destination</label>
+      <input id="destination" name="destination" [(ngModel)]="schedule.destination" type="text">
+  </div>
+
+  <div>
+      <label for="departureTime">Departure Time</label>
+      <input id="departureTime" name="departureTime" [(ngModel)]="schedule.departureTime" type="datetime-local" [attr.min]="minDateTime">
+  </div>
+
+  <div>
+      <label for="arrivalTime">Arrival Time</label>
+      <input id="arrivalTime" name="arrivalTime" [(ngModel)]="schedule.arrivalTime" type="datetime-local" [attr.min]="minDateTime">
+  </div>
+
+  <div>
+      <label for="seatCapacity">Seat Capacity</label>
+      <input id="seatCapacity" name="seatCapacity" [(ngModel)]="schedule.seatCapacity" type="number">
+  </div>
+
+  <div>
+      <label for="price">Price</label>
+      <input id="price" name="price" [(ngModel)]="schedule.price" type="number">
+  </div>
+
+  <div *ngFor="let ticketType of schedule.ticketTypes; let i = index" class="ticket-type-container">
+      <div>
+          <label for="ticketTypeName-{{i}}">Ticket Type Name</label>
+          <input id="ticketTypeName-{{i}}" name="ticketTypeName-{{i}}" [(ngModel)]="ticketType.ticketTypeName" type="text">
+      </div>
+
+      <div>
+          <label for="numberOfSeats-{{i}}">Number of Seats</label>
+          <input id="numberOfSeats-{{i}}" name="numberOfSeats-{{i}}" [(ngModel)]="ticketType.numberOfSeats" type="number">
+      </div>
+
+      <div>
+          <label for="price-{{i}}">Price</label>
+          <input id="price-{{i}}" name="price-{{i}}" [(ngModel)]="ticketType.price" type="number" (change)="updateTicketType()">
+      </div>
+
+      <div class="ticket-type-actions">
+          <button type="button" class="remove-btn" (click)="removeTicketType(i)">
+              <i class="fa-solid fa-trash"></i> Remove
+          </button>
+      </div>
+  </div>
+
+  <button type="button" class="add-ticket-type" (click)="addTicketType()">
+      <i class="fa-solid fa-plus"></i> Add Ticket Type
+  </button>
+
+  <button type="submit">Submit</button>
+</form>

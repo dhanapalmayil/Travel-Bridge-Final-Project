@@ -1,0 +1,58 @@
+/* Admin Navbar Styling */
+.admin-navbar {
+    padding: 0 30px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-logo {
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-logo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-item .nav-link {
+    font-size: 16px;
+    margin-right: 15px;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item .nav-link:hover {
+    color: #d84e55; /* Primary color on hover */
+  }
+  
+  .btn-danger {
+    border-radius: 25px;
+    padding: 8px 16px;
+    color: white !important;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c44b50; /* Darker red on hover */
+  }
+  
+  /* Ensure responsive design */
+  @media (max-width: 768px) {
+    .navbar-title {
+      font-size: 20px;
+    }
+    .nav-item .nav-link {
+      font-size: 14px;
+    }
+  }
+  

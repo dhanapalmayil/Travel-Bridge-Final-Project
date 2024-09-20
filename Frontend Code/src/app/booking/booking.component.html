@@ -1,0 +1,54 @@
+
+<div class="container">
+  <h2>Reserve Your Seats</h2>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <div class="form-content">
+      <!-- Hidden Fields -->
+      <input formControlName="userId" type="hidden" />
+      <input formControlName="scheduleId" type="hidden" />
+      <input formControlName="bookingDate" type="hidden" />
+      <input formControlName="numberOfSeats" type="hidden" />
+      <input formControlName="totalAmount" type="hidden" />
+      <input formControlName="bookingStatus" type="hidden" />
+
+      <!-- Display the selected number of seats (Read-only) -->
+      <div class="form-group">
+        <label>Your VIP Seats:</label> <!-- Catchy name -->
+        <span>{{ selectedSeatsCount }} Seats</span>
+      </div>
+
+      <!-- Display the total amount in INR (Read-only) -->
+      <div class="form-group">
+        <label>Total to Pay:</label> <!-- Catchy name -->
+        <span>{{ totalAmount | currency:'INR':'symbol':'1.2-2' }}</span>
+      </div>
+
+      <!-- Seat Selection -->
+      <div id="seatButtons" class="form-group">
+        <div *ngFor="let seatType of seats">
+          <h4>{{ seatType.type }} - Price: {{ seatType.price | currency:'INR':'symbol':'1.2-2' }}</h4>
+          <div *ngFor="let row of getSeatRows(seatType.seats)" class="seat-row">
+            <div *ngFor="let seat of row"
+                 [ngClass]="{'icon-booked': seat.isBooked, 'icon-selected': !seat.isBooked && seat.isSelected, 'icon-unbooked': !seat.isBooked && !seat.isSelected, 'icon-left-faced': seat.isLeftFaced}"
+                 [attr.title]="seat.isBooked ? 'Seat ' + seat.number + ' (Booked)' : 'Select Seat ' + seat.number"
+                 (click)="onSeatSelect(seat)">
+              <i class="material-icons" [ngClass]="{'icon-left-faced': seat.isLeftFaced}">airline_seat_recline_extra</i>
+              <span>{{ seat.number }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-footer">
+      <button type="submit" class="btn btn-primary" [disabled]="isSubmitting || selectedSeats.size === 0">Submit Reservation</button>
+    </div>
+  </form>
+</div>

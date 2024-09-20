@@ -1,0 +1,48 @@
+<app-admin-header></app-admin-header>
+<div class="user-management">
+    <h2>User Management</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>User Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.userID }}</td>
+          <td>{{ user.userName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.userRole }}</td>
+          <td>
+            <button class="edit-btn" (click)="selectUser(user)">Edit</button>
+            <button class="delete-btn" (click)="deleteUser(user.userID)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="selectedUser" class="edit-user-form">
+      <h3>Edit User: {{ selectedUser.userName }}</h3>
+      <form [formGroup]="userForm" (ngSubmit)="updateUser()">
+        <div class="form-group">
+          <label for="userName">UserName</label>
+          <input id="userName" formControlName="userName" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" formControlName="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="userRole">User Role</label>
+          <input id="userRole" formControlName="userRole" class="form-control">
+        </div>
+        <button type="submit" [disabled]="userForm.invalid" class="update-btn">Update User</button>
+      </form>
+    </div>
+  </div>
+  

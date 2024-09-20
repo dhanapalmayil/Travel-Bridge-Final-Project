@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div *ngIf="upcomingBookings.length > 0">
+    <h2>Upcoming Bookings</h2>
+    <div class="center-container">
+        <div *ngFor="let booking of upcomingBookings" class="ticket-card">
+            <h3>{{ booking.transportSchedule.transportName }}</h3>
+            <p>From: {{ booking.transportSchedule.origin }} To: {{ booking.transportSchedule.destination }}</p>
+            <p>Departure: {{ booking.transportSchedule.departureTime | date: 'short' }}</p>
+            <p>Arrival: {{ booking.transportSchedule.arrivalTime | date: 'short' }}</p>
+            <p>Seats Booked: {{ booking.numberOfSeats }}</p>
+            <p class="ticket-amount">Total Amount: ₹{{ booking.totalAmount }}</p>
+            <button (click)="cancelBooking(booking.bookingID)">
+                Cancel Booking
+            </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="pastBookings.length > 0">
+    <h2>Past Bookings (History)</h2>
+    <div class="center-container">
+        <div *ngFor="let booking of pastBookings" class="ticket-card">
+            <h3>{{ booking.transportSchedule.transportName }}</h3>
+            <p>From: {{ booking.transportSchedule.origin }} To: {{ booking.transportSchedule.destination }}</p>
+            <p>Departure: {{ booking.transportSchedule.departureTime | date: 'short' }}</p>
+            <p>Arrival: {{ booking.transportSchedule.arrivalTime | date: 'short' }}</p>
+            <p>Seats Booked: {{ booking.numberOfSeats }}</p>
+            <p class="ticket-amount">Total Amount: ₹{{ booking.totalAmount }}</p>
+        </div>
+    </div>
+</div>

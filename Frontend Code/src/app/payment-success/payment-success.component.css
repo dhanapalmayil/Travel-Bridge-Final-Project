@@ -1,0 +1,64 @@
+/* General Container Styling */
+.payment-success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #f8d7da, #f5c6cb); /* Background gradient */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.success-icon {
+    font-size: 100px;
+    color: #28a745; /* Green color for success */
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+}
+
+button.back-home-btn {
+    padding: 15px 30px;
+    background: #d84e55;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+button.back-home-btn:hover {
+    background: #c43e50;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a catchy quote styling */
+.payment-success-container::before {
+    content: '“Your journey has just begun!”';
+    display: block;
+    font-size: 20px;
+    color: #d84e55;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}

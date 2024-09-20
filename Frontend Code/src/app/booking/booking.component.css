@@ -1,0 +1,188 @@
+/* booking.component.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+}
+/* booking.component.css */
+
+/* Additional CSS for updated text */
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group span {
+  display: block;
+  font-size: 18px;
+  margin-top: 5px;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+}
+
+
+.form-content {
+  flex: 1; /* This will push the footer to the bottom */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group span {
+  display: block;
+  font-size: 18px;
+  margin-top: 5px;
+  color: #555;
+}
+
+/* Center the submit button */
+.form-footer {
+  text-align: center;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Style for the seat icons container */
+#seatButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.seat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Increased spacing between icons */
+}
+
+/* Base style for seat icons */
+.seat-row div {
+  font-size: 18px; /* Adjusted for better readability */
+  padding: 12px;
+  margin: 6px;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Rotate icons */
+.icon-left-faced {
+  transform: rotateY(180deg); /* Rotate to face left */
+}
+
+/* Style for booked seats */
+.icon-booked {
+  background-color: #d9534f; /* Red for booked */
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Style for selected seats */
+.icon-selected {
+  background-color: #5bc0de; /* Blue for selected */
+  color: white;
+}
+
+/* Style for unbooked seats */
+.icon-unbooked {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #ddd; /* Light border for unbooked */
+}
+
+/* Style for icon inside seat */
+.seat-row i {
+  font-size: 28px; /* Adjusted for better visibility */
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* Style for seat number below the icon */
+.seat-row span {
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+  color: inherit;
+}
+
+/* Hover and focus effects for better UX */
+.seat-row div:hover {
+  opacity: 0.9;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.seat-row div:focus {
+  outline: 2px solid #0275d8; /* Outline color for focus */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .seat-row div {
+    font-size: 14px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
+
+  .seat-row i {
+    font-size: 24px;
+  }
+
+  .seat-row span {
+    font-size: 14px;
+  }
+}

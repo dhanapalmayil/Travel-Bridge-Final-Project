@@ -1,0 +1,21 @@
+<app-admin-header></app-admin-header>
+<div class="revenue-report">
+    <h2>Revenue Report</h2>
+    <form [formGroup]="reportForm" (ngSubmit)="fetchReport()" class="form-container">
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input id="startDate" formControlName="startDate" type="date" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input id="endDate" formControlName="endDate" type="date" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-generate">Generate Report</button>
+    </form>
+  
+    <div *ngIf="revenueReport" class="report-details">
+      <h3>Report Details</h3>
+      <p>Total Revenue: <span>{{ revenueReport.total | currency:'INR' }}</span></p>
+    </div>
+  </div>
+  

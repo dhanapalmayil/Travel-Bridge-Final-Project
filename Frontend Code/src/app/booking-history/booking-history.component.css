@@ -1,0 +1,104 @@
+.ticket-card {
+    background: white;
+    border: 2px solid #d84e55;
+    border-radius: 10px;
+    width: 350px;
+    margin: 20px auto;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ticket-card h3 {
+    color: #d84e55;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.ticket-card p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #333;
+    text-align: center;
+}
+
+.ticket-card .ticket-amount {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    color: #d84e55;
+}
+
+.ticket-card button {
+    padding: 8px 12px;
+    background-color: #d84e55;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.ticket-card button:hover {
+    background-color: #b83d47;
+}
+
+.ticket-card:before, .ticket-card:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 2px solid #d84e55;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ticket-card:before {
+    left: -15px;
+}
+
+.ticket-card:after {
+    right: -15px;
+}
+
+h2 {
+    color: #d84e55;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+}
+
+/* Center the ticket on the page */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 480px) {
+    .ticket-card {
+        width: 280px;
+        padding: 10px;
+    }
+
+    .ticket-card h3 {
+        font-size: 1.2em;
+    }
+
+    .ticket-card button {
+        padding: 6px 10px;
+    }
+}

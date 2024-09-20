@@ -1,0 +1,21 @@
+<app-admin-header></app-admin-header>
+<div class="admin-dashboard">
+    <h2>Admin Dashboard Metrics</h2>
+    <div class="metrics-container">
+      <ul class="metrics-list">
+        <li class="metric-item">
+          <span>Total Users:</span> <span>{{ metrics.totalUsers }}</span>
+        </li>
+        <li class="metric-item">
+          <span>Total Bookings:</span> <span>{{ metrics.totalBookings }}</span>
+        </li>
+        <li class="metric-item">
+          <span>Total Providers:</span> <span>{{ metrics.totalProviders }}</span>
+        </li>
+        <li class="metric-item">
+          <span>Total Sales:</span> <span>{{ metrics.totalSales | currency:'INR' }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,141 @@
+.provider-management {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+   
+    border-radius: 8px;
+  
+    font-family: Arial, sans-serif;
+  }
+  
+  .error-message {
+    color: #d84e55;
+    background-color: #ffe5e5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    color: #555;
+  }
+  
+  table th {
+    background-color: #d84e55;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+  }
+  
+  table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .btn-warning {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .btn-warning:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-danger {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #e53935;
+  }
+  
+  .edit-provider-form {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .edit-provider-form h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fafafa;
+    box-sizing: border-box;
+  }
+  
+  .text-danger {
+    color: #d84e55;
+    font-size: 12px;
+  }
+  
+  .btn-primary {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1976d2;
+  }
+  
+  .btn-primary[disabled] {
+    background-color: #bbb;
+    cursor: not-allowed;
+  }
+  

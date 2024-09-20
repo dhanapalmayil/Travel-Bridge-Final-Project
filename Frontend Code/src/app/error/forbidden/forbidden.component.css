@@ -1,0 +1,73 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Black background */
+  }
+  
+  .forbidden-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .forbidden-content {
+    background: rgba(30, 30, 30, 0.9); /* Dark gray for content box */
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  h1 {
+    font-size: 100px;
+    margin: 0;
+    color: #d84e55; /* Your base color */
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  h2 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #ffffff; /* White for heading */
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #cccccc; /* Light gray for paragraph text */
+    animation: fadeIn 1.6s ease-in-out;
+  }
+  
+  .back-home {
+    display: inline-block;
+    background-color: #d84e55; /* Your base color */
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .back-home:hover {
+    background-color: #f54049; /* Highlight color on hover */
+    color: #333; /* Dark text on hover */
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

@@ -1,0 +1,146 @@
+/* Custom navbar styling */
+.custom-navbar {
+    padding: 0px 30px;
+    font-size: 18px;
+    background-color: #ffffff; /* Light background for the navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.custom-logo {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.custom-logo:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.custom-btn {
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: white; /* Ensure text is visible on colored background */
+}
+
+.custom-btn:hover {
+    background-color: #d74e5b; /* Slightly darker shade on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for buttons with base color */
+.btn-outline-primary, .btn-outline-success {
+    border-color: #d84e55;
+    background-color: #d84e55;
+}
+
+.btn-outline-primary:hover, .btn-outline-success:hover {
+    background-color: #d74e5b; /* Slightly darker shade on hover */
+    border-color: #d84e55;
+}
+
+.nav-item .btn {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.logout-icon {
+    color: #333;
+    font-size: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.logout-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #333;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+.logout-icon:hover .logout-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-15px);
+}
+
+.logout-icon:hover {
+    color: #d84e55;
+    transform: scale(1.2);
+}
+
+.navbar-text {
+    margin-right: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #333;
+}
+
+/* Add styles for dropdown menu */
+.nav-item.dropdown .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Rounded corners for dropdown */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px; /* Set a minimum width for the dropdown */
+}
+
+.nav-item.dropdown .dropdown-menu.show {
+    display: block; /* Show the dropdown when active */
+}
+
+.dropdown-item {
+    border: none;
+    cursor: pointer;
+
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa; /* Light background on hover */
+    color: #d84e55; /* Change text color on hover */
+}
+
+.dropdown-divider {
+    margin: 0.5rem 0;
+}

@@ -1,0 +1,124 @@
+.login-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    height: 600px; /* Restricting height */
+    overflow: hidden; /* Prevent outer page scroll */
+}
+
+.logo-side {
+    flex: 1;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.logo-image {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.form-side {
+    flex: 2;
+    background: #ffffff;
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow-y: auto; /* Allow inner scroll when needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bus-theme {
+    background:#d84e55;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+}
+
+
+.form-title {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-subtitle {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 10px; /* Decreasing margin to save space */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px; /* Reduced padding */
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px; /* Reduced font size */
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.alert-danger {
+    background-color: #ff646f;
+    color: #fafafa;
+}
+
+.alert-success {
+    background-color: #d4ffde;
+    color: #155724;
+}
+
+.btn-primary {
+    background-color: #d84e55;
+    border: 1px solid white;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #db5252;
+}
+
+
+.btn-login {
+    font-size: 16px;
+}
+.text-danger{
+    color: white !important;
+}
